@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'application#angular'
 
+  resources :posts, defaults: {format: 'json'}
   resources :posts, only: [:create, :index, :show] do
     resources :comments, only: [:show, :create] do
       member do
